@@ -5,13 +5,19 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Scissors Paper Rock</h1>
-    <div id="game">
-      <button id="scissors">Scissors</button>
-      <button id="paper">Paper</button>
-      <button id="rock">Rock</button>
+    <div id="container">
+      <h1>Scissors Paper Rock</h1>
+      <div id="game">
+        <button id="scissors" class="choice">Scissors</button>
+        <button id="paper" class="choice">Paper</button>
+        <button id="rock" class="choice">Rock</button>
+      </div>
+      <div id="result"></div>
+      <div id="counter">
+        Wins: <span id="wins">0</span>
+        Losses: <span id="losses">0</span>
+      </div>
     </div>
-    <div id="result"></div>
     <script src="game.js"></script>
   </body>
 </html>
