@@ -29,6 +29,22 @@ const lossesSpan = document.querySelector('#losses');
 let wins = 0;
 let losses = 0;
 
+// Array to store previous choices
+const history = [];
+
 buttons.forEach((button) => {
   button.addEventListener('click', (event) => {
-    const playerChoice
+    const playerChoice = event.target.id;
+    const aiChoice = getAiChoice();
+    const result = getResult(playerChoice, aiChoice);
+    if (result === 'You win!') {
+      wins++;
+      winsSpan.innerHTML = wins;
+    } else if (result === 'You lose') {
+      losses++;
+      lossesSpan.innerHTML = losses;
+    }
+    resultDiv.innerHTML = `You chose ${playerChoice}, AI chose ${aiChoice}. ${result}`;
+    history.push({ playerChoice, aiChoice, result });
+  });
+});
