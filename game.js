@@ -21,14 +21,14 @@ function getResult(playerChoice, aiChoice) {
   }
 }
 
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('.choice');
 const resultDiv = document.querySelector('#result');
+const winsSpan = document.querySelector('#wins');
+const lossesSpan = document.querySelector('#losses');
+
+let wins = 0;
+let losses = 0;
 
 buttons.forEach((button) => {
   button.addEventListener('click', (event) => {
-    const playerChoice = event.target.id;
-    const aiChoice = getAiChoice();
-    const result = getResult(playerChoice, aiChoice);
-    resultDiv.innerHTML = `You chose ${playerChoice}, AI chose ${aiChoice}. ${result}`;
-  });
-});
+    const playerChoice
